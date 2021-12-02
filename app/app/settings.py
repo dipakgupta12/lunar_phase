@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5r38df&gz*tg_vnc(u*in*nj+*0omn)eg=5#il*7@+q67onm2)'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -151,5 +151,7 @@ STATIC_ROOT = '/vol/web/static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJANGO_SUPERUSER_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
+
+DJANGO_SUPERUSER_EMAIL = os.environ.get('DJANGO_SUPERUSER_EMAIL')
 
 AUTHENTICATION_BACKENDS = ['core.email_backend.EmailBackend']

@@ -11,7 +11,7 @@ python manage.py collectstatic --noinput
 python manage.py makemigrations
 python manage.py makemigrations core
 python manage.py migrate
-python manage.py createsuperuser --no-input --username='admin' --email='admin@gmail.com'
+python manage.py createsuperuser --no-input --username='admin'
 
 whoami
 

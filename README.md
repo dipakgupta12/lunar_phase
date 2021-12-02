@@ -12,6 +12,16 @@ Environment variables are listed below
 `ALLOWED_HOSTS=127.0.0.1,0.0.0.0`<br>
 `DJANGO_SUPERUSER_PASSWORD=**********`<br>
 
+Authentication Credentials
+----------------------------
+Please update below env variable email in **.env.build** file. 
+
+`DJANGO_SUPERUSER_EMAIL=********************`<br>
+
+Default password is
+
+> &K87kfgTG!Yu
+
 <br>
 
 Run project
@@ -26,10 +36,3 @@ or
 
 <br>
 
-Default Superuser
------------------
-
-Please login using below credentials
-
-> - email: admin@gmail.com
-> - password: #Admin@123
