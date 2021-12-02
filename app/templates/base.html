@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
+</head>
+
+<body>
+    <h1></h1>
+    {% block content %} {% endblock %}
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

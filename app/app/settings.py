@@ -150,6 +150,9 @@ MEDIA_URL = '/static/media/'
 MEDIA_ROOT = '/vol/web/media'
 STATIC_ROOT = '/vol/web/static'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -161,3 +164,7 @@ DJANGO_SUPERUSER_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
 DJANGO_SUPERUSER_EMAIL = os.environ.get('DJANGO_SUPERUSER_EMAIL')
 
 AUTHENTICATION_BACKENDS = ['core.email_backend.EmailBackend']
+
+ARIS_CLIENT_ID = os.environ.get('ARIS_CLIENT_ID')
+
+ARIS_CLIENT_SECRET = os.environ.get('ARIS_CLIENT_SECRET')

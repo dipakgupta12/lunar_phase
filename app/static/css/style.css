@@ -1,0 +1,36 @@
+:root {
+    --universal-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(30, 40, 60);
+}
+
+.moonContainer {
+    height: auto;
+    width: 100px;
+    margin: auto;
+    font-size: 100px;
+    position: relative;
+}
+
+.phase {
+    background-color: transparent;
+    vertical-align: middle;
+    line-height: 2em;
+    width: 100%;
+    margin: auto;
+    z-index: 1;
+    position: absolute;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    color: #9aa6bf;
+    text-transform: capitalize;
+    margin-top: 2em;
+}
