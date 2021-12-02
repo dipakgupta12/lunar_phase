@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <style>
+        :root {
+            --universal-height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgb(30, 40, 60);
+        }
+
+        .moonContainer {
+            height: auto;
+            width: 100px;
+            margin: auto;
+            font-size: 100px;
+            position: relative;
+        }
+
+        .phase {
+            background-color: transparent;
+            vertical-align: middle;
+            line-height: var(--universal-height);
+            width: 100%;
+            margin: auto;
+            z-index: 1;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
+
+</head>
+
+<body>
+    <div class="moonContainer" id="moonContainer">
+        <div class="phase" id="moonPhase0" style="opacity: 1;">🌑</div>
+        <div class="phase" id="moonPhase1" style="opacity: 1;">🌓</div>
+        <div class="phase" id="moonPhase2" style="opacity: 1;">🌕</div>
+        <div class="phase" id="moonPhase3" style="opacity: 0;">🌗</div>
+    </div>
+    <script>
+        // (function () {
+        //     const moonContainer = document.getElementById('moonContainer');
+        //     const moonPhases = ['🌑', '🌓', '🌕', '🌗'];
+        //     for (let index = 0; index < moonPhases.length; index++) {
+        //         const moon = moonPhases[index];
+        //         // for each moon, create a div with class phase and id moonPhase
+        //         const moonDiv = document.createElement('div');
+        //         moonDiv.setAttribute('class', 'phase');
+        //         moonDiv.setAttribute('id', 'moonPhase' + index);
+        //         // save that div to a const and put it in the moonContainer
+        //         const moonContent = moonContainer.appendChild(moonDiv);
+        //         // display each moon on the DOM
+        //         moonContent.innerHTML = moon;
+        //         moonContent.style.opacity = '0';
+        //         let lastMoonIndex = index - 1;
+        //         if (index - 1 < 0) {
+        //             lastMoonIndex = moonPhases.length - 1;
+        //         }
+        //         setTimeout(function () {
+        //             const lastMoon = document.getElementById('moonPhase' + lastMoonIndex);
+        //             lastMoon.style.opacity = '0';
+        //             moonContent.style.opacity = '1';
+        //             setInterval(function () {
+        //                 moonContent.style.opacity = '1';
+        //                 lastMoon.style.opacity = '0';
+        //             }, moonPhases.length * 200);
+        //         }, 20000 * index);
+        //     }
+
+        // })()
+
+            $(function () {
+                var $days = $('#days')
+
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    username: "admin@gmail.com",
+                    password: "&K87kfgTG!Yu",
+                    url: '/api/lunar_phase',
+                    success: function (data) {
+                        // $.each(days, function (i, day) {
+                        //     $days.append('<li>date: ' + day.date + '</li>')
+                        // });
+                        console.log(data)
+                    }
+                });
+            })
+    </script>
+</body>
+
+</html>

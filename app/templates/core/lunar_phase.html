@@ -1,3 +1,94 @@
-lunar phase
+<html>
 
-<a href="{% url 'logout' %}">Logout</a>
+<head>
+    <style>
+        :root {
+            --universal-height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgb(30, 40, 60);
+        }
+
+        .moonContainer {
+            height: auto;
+            width: 100px;
+            margin: auto;
+            font-size: 100px;
+            position: relative;
+        }
+
+        .phase {
+            background-color: transparent;
+            vertical-align: middle;
+            line-height: 2em;
+            width: 100%;
+            margin: auto;
+            z-index: 1;
+            position: absolute;
+        }
+
+        h1 {
+            font-size: 100px;
+            text-align: center;
+            justify-content: center;
+            display: block;
+            color: #9aa6bf;
+            text-transform: capitalize;
+            margin-top: 2em;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
+
+</head>
+
+<body>
+    <h1></h1>
+    <div class="moonContainer" id="moonContainer">
+        <div class="phase" id="waning_crescent" style="opacity: 0;">🌘</div>
+        <div class="phase" id="new_moon" style="opacity: 0;">🌑</div>
+        <div class="phase" id="waxing_crescent" style="opacity: 0;">🌒</div>
+        <div class="phase" id="first_quater" style="opacity: 0;">🌓</div>
+        <div class="phase" id="waxing_gibbous" style="opacity: 0;">🌔</div>
+        <div class="phase" id="full_moon" style="opacity: 0;">🌕</div>
+        <div class="phase" id="waning_gibbous" style="opacity: 0;">🌘</div>
+        <div class="phase" id="third_quater" style="opacity: 0;">🌗</div>
+    </div>
+    <script>
+
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                username: "admin@gmail.com",
+                password: "&K87kfgTG!Yu",
+                url: '/api/lunar_phase',
+                success: function (data) {
+                    const response = data.response;
+                    $('h1').text(response.name);
+                    if (response.name === "waning crescent") {
+                        $("#waning_crescent").css({ 'opacity': 1 })
+                    } else if (response.name === "new moon") {
+                        $("#new_moon").css({ 'opacity': 1 })
+                    } else if (response.name === "waxing crescent") {
+                        $("#waxing_crescent").css({ 'opacity': 1 })
+                    } else if (response.name === "first quater") {
+                        $("#first_quater").css({ 'opacity': 1 })
+                    } else if (response.name === "waxing gibbous") {
+                        $("#waxing_gibbous").css({ 'opacity': 1 })
+                    } else if (response.name === "full moon") {
+                        $("#full_moon").css({ 'opacity': 1 })
+                    } else if (response.name === "waning gibbous") {
+                        $("#waning_gibbous").css({ 'opacity': 1 })
+                    } else if (response.name === "third quater") {
+                        $("#third_quater").css({ 'opacity': 1 })
+                    }
+
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
