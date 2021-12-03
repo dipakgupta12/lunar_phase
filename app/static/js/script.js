@@ -1,8 +1,12 @@
 
 $(function () {
+    const token = localStorage.getItem("token")
     $.ajax({
         type: 'GET',
         dataType: 'json',
+        beforeSend: function (xhr){ 
+            xhr.setRequestHeader('Authorization', "Basic " + token); 
+        },
         url: '/api/lunar_phase',
         success: function (data) {
             const response = data.response;
